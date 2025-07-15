@@ -84,26 +84,13 @@ class _MyappState extends State<Myapp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Stack(
-                    children: [
-                      Container(height: 200, width: 200, color: Colors.red),
-                      Positioned(
-                        left: 30,
-                        child: Container(
-                          height: 180,
-                          width: 180,
-                          color: Colors.green,
-                        ),
-                      ),
-                      Positioned(right: 100, child: Text('Postion the text')),
-                    ],
-                  ),
-                  Stack(
-                    children: [
-                      Container(height: 100, width: 100, color: Colors.blue),
-                      Container(height: 90, width: 90, color: Colors.red),
-                      Container(height: 80, width: 80, color: Colors.grey),
-                    ],
+                  Center(
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Colors.amber,
+                      backgroundImage: AssetImage('assets/images/Me3.png'),
+                      // child: Icon(Icons.person),
+                    ),
                   ),
                 ],
               ),
@@ -206,3 +193,27 @@ class _MyappState extends State<Myapp> {
 //           ),
 //         ],
 //       ),
+
+
+// Stack widget
+  // Stack(
+  //                   children: [
+  //                     Container(height: 200, width: 200, color: Colors.red),
+  //                     Positioned(
+  //                       left: 30,
+  //                       child: Container(
+  //                         height: 180,
+  //                         width: 180,
+  //                         color: Colors.green,
+  //                       ),
+  //                     ),
+  //                     Positioned(right: 100, child: Text('Postion the text')),
+  //                   ],
+  //                 ),
+  //                 Stack(
+  //                   children: [
+  //                     Container(height: 100, width: 100, color: Colors.blue),
+  //                     Container(height: 90, width: 90, color: Colors.red),
+  //                     Container(height: 80, width: 80, color: Colors.grey),
+  //                   ],
+  //   ),
