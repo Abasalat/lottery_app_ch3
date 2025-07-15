@@ -23,7 +23,7 @@ class _MyappState extends State<Myapp> {
       home: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(title: Text('Lottery App')),
-        body: x == 8
+        body: x == 0
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,46 +84,26 @@ class _MyappState extends State<Myapp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Row(
+                  Stack(
                     children: [
-                      Expanded(
+                      Container(height: 200, width: 200, color: Colors.red),
+                      Positioned(
+                        left: 30,
                         child: Container(
+                          height: 180,
+                          width: 180,
                           color: Colors.green,
-                          height: 250,
-                          child: Center(child: Text('Green Container')),
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          color: Colors.red,
-                          height: 250,
-                          child: Center(child: Text('Green Container')),
-                        ),
-                      ),
+                      Positioned(right: 100, child: Text('Postion the text')),
                     ],
                   ),
-                  Center(
-                    child: Container(
-                      height: 250,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(15.0),
-                          bottomLeft: Radius.circular(15.0),
-                        ),
-                        boxShadow: [
-                          BoxShadow(color: Colors.blueAccent, blurRadius: 50),
-                        ],
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            'https://images.pexels.com/photos/12605822/pexels-photo-12605822.jpeg',
-                          ),
-                        ),
-                      ),
-                      child: Center(child: Text('Container for styling')),
-                    ),
+                  Stack(
+                    children: [
+                      Container(height: 100, width: 100, color: Colors.blue),
+                      Container(height: 90, width: 90, color: Colors.red),
+                      Container(height: 80, width: 80, color: Colors.grey),
+                    ],
                   ),
                 ],
               ),
@@ -140,6 +120,9 @@ class _MyappState extends State<Myapp> {
   }
 }
 
+
+
+// Statful widget
 // class Myapp extends StatefulWidget {
 //   const Myapp({super.key});
 
@@ -174,3 +157,52 @@ class _MyappState extends State<Myapp> {
 //     );
 //   }
 // }
+
+
+// Container Widget
+      // Center(
+      //               child: Container(
+      //                 height: 250,
+      //                 width: 250,
+      //                 decoration: BoxDecoration(
+      //                   color: Colors.blue,
+      //                   borderRadius: BorderRadius.only(
+      //                     topRight: Radius.circular(15.0),
+      //                     bottomLeft: Radius.circular(15.0),
+      //                   ),
+      //                   boxShadow: [
+      //                     BoxShadow(color: Colors.blueAccent, blurRadius: 50),
+      //                   ],
+      //                   image: DecorationImage(
+      //                     fit: BoxFit.cover,
+      //                     image: NetworkImage(
+      //                       'https://images.pexels.com/photos/12605822/pexels-photo-12605822.jpeg',
+      //                     ),
+      //                   ),
+      //                 ),
+      //                 child: Center(child: Text('Container for styling')),
+      //               ),
+      //             ),
+
+
+
+// Expanded widget
+
+// Row(
+//         children: [
+//           Expanded(
+//             child: Container(
+//               color: Colors.green,
+//               height: 250,
+//               child: Center(child: Text('Green Container')),
+//             ),
+//           ),
+//           Expanded(
+//             child: Container(
+//               color: Colors.red,
+//               height: 250,
+//               child: Center(child: Text('Green Container')),
+//             ),
+//           ),
+//         ],
+//       ),
