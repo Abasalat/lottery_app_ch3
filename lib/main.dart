@@ -84,12 +84,30 @@ class _MyappState extends State<Myapp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Center(
+                  Padding(
+                    padding: EdgeInsets.only(top: 20),
                     child: CircleAvatar(
                       radius: 50,
                       backgroundColor: Colors.amber,
                       backgroundImage: AssetImage('assets/images/Me3.png'),
                       // child: Icon(Icons.person),
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: 'Dont have an account ',
+                      style: TextStyle(color: Colors.white),
+                      children: [
+                        TextSpan(
+                          text: 'Signup',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
