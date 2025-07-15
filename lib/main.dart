@@ -84,6 +84,24 @@ class _MyappState extends State<Myapp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          color: Colors.green,
+                          height: 250,
+                          child: Center(child: Text('Green Container')),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          color: Colors.red,
+                          height: 250,
+                          child: Center(child: Text('Green Container')),
+                        ),
+                      ),
+                    ],
+                  ),
                   Center(
                     child: Container(
                       height: 250,
