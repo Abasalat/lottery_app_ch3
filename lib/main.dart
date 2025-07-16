@@ -93,21 +93,68 @@ class _MyappState extends State<Myapp> {
                       // child: Icon(Icons.person),
                     ),
                   ),
-                  RichText(
-                    text: TextSpan(
-                      text: 'Dont have an account ',
-                      style: TextStyle(color: Colors.white),
-                      children: [
-                        TextSpan(
-                          text: 'Signup',
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
+                  SizedBox(height: 14),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.deepOrange,
+                      enabled: true,
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      decoration: InputDecoration(
+                        prefix: Icon(Icons.email, color: Colors.white),
+                        suffix: Icon(Icons.visibility_off, color: Colors.white),
+                        hintText: 'Email',
+                        labelText: 'Email',
+                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue.shade200),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                      ],
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.orange.shade200),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.red.shade200),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        print(value);
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 14),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      cursorColor: Colors.deepOrange,
+                      enabled: true,
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      decoration: InputDecoration(
+                        prefix: Icon(Icons.password, color: Colors.white),
+                        suffix: Icon(Icons.visibility_off, color: Colors.white),
+                        hintText: 'Password',
+                        labelText: 'Password',
+                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue.shade200),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.orange.shade200),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.red.shade200),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        print(value);
+                      },
                     ),
                   ),
                 ],
@@ -235,3 +282,24 @@ class _MyappState extends State<Myapp> {
   //                     Container(height: 80, width: 80, color: Colors.grey),
   //                   ],
   //   ),
+
+
+// RichText widget
+
+    // RichText(
+    //                 text: TextSpan(
+    //                   text: 'Dont have an account ',
+    //                   style: TextStyle(color: Colors.white),
+    //                   children: [
+    //                     TextSpan(
+    //                       text: 'Signup',
+    //                       style: TextStyle(
+    //                         decoration: TextDecoration.underline,
+    //                         fontWeight: FontWeight.bold,
+    //                         fontSize: 18,
+    //                         color: Colors.white,
+    //                       ),
+    //                     ),
+    //                   ],
+    //                 ),
+    //               ),
