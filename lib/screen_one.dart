@@ -17,6 +17,18 @@ class _ScreenOneState extends State<ScreenOne> {
       body: Column(
         children: [
           Center(child: Text("Screen one")),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 100,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assests/images/Me3.png'),
+                  ),
+                );
+              },
+            ),
+          ),
           TextButton(
             onPressed: () {
               Navigator.pushNamed(context, LotteryScreen.id);

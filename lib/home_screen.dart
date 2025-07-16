@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottery_app/lottery_screen.dart';
 import 'package:lottery_app/screen_one.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,8 +14,49 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(title: Text('Navigation Drawer')),
+      backgroundColor: Color.fromARGB(255, 198, 187, 216),
+      appBar: AppBar(
+        title: Text('Navigation Drawer'),
+        backgroundColor: Color(0xff764abc),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Color(0xff764abc)),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  'https://images.pexels.com/photos/10402659/pexels-photo-10402659.jpeg',
+                ),
+              ),
+              accountName: Text('Aba Salat'),
+              accountEmail: Text('abasalat2200@gmail.com'),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Screen one'),
+              onTap: () {
+                Navigator.pushNamed(context, ScreenOne.id);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.games),
+              title: Text('Lottery app'),
+              onTap: () {
+                Navigator.pushNamed(context, LotteryScreen.id);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('last Page'),
+              onTap: () {
+                Navigator.pushNamed(context, HomeScreen.id);
+              },
+            ),
+          ],
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
