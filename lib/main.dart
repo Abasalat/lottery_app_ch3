@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:lottery_app/home_screen.dart';
 
 void main() {
   runApp(Myapp());
@@ -13,111 +13,9 @@ class Myapp extends StatefulWidget {
 }
 
 class _MyappState extends State<Myapp> {
-  Random random = Random();
-  int x = 0;
-  int y = 3;
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(title: Text('Lottery App')),
-        body: x == 0
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Center(child: Text('Lottery winning number is $y')),
-                  SizedBox(height: 15),
-                  Container(
-                    height: x == y ? 600 : 300,
-                    width: 300,
-
-                    decoration: BoxDecoration(
-                      color: x == y ? Colors.lightGreen : Colors.grey,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: x == y ? Colors.green : Colors.red,
-                          blurRadius: 50,
-                        ),
-                      ],
-                    ),
-
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: x == y
-                          ? Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.done_all,
-                                  color: Colors.green,
-                                  size: 35,
-                                ),
-                                SizedBox(height: 15),
-                                Text(
-                                  'Congratulations you won the lottery ',
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            )
-                          : Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(Icons.error, color: Colors.red, size: 35),
-                                SizedBox(height: 15),
-                                Text(
-                                  'Better luck next time your number is $x\n try again',
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                    ),
-                  ),
-                ],
-              )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 14),
-                  Expanded(
-                    flex: 3,
-                    child: ListView.builder(
-                      itemCount: 30,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: CircleAvatar(
-                            radius: 50,
-                            backgroundColor: Colors.amber,
-                            backgroundImage: NetworkImage(
-                              'https://images.pexels.com/photos/17594395/pexels-photo-17594395.jpeg',
-                            ),
-                            // child: Icon(Icons.person),
-                          ),
-                          title: Text('Aba Salat'),
-                          subtitle: Text('Flutter cross Platform'),
-                          trailing: Text('11:37 AM'),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            x = random.nextInt(5);
-            print(x.toString());
-            setState(() {});
-          },
-          child: Icon(Icons.refresh),
-        ),
-      ),
-    );
+    return MaterialApp(title: 'Navigation App', home: HomeScreen());
   }
 }
 
