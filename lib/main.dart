@@ -21,7 +21,7 @@ class _MyappState extends State<Myapp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         appBar: AppBar(title: Text('Lottery App')),
         body: x == 0
             ? Column(
@@ -84,76 +84,25 @@ class _MyappState extends State<Myapp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 20),
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundColor: Colors.amber,
-                      backgroundImage: AssetImage('assets/images/Me3.png'),
-                      // child: Icon(Icons.person),
-                    ),
-                  ),
                   SizedBox(height: 14),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      cursorColor: Colors.deepOrange,
-                      enabled: true,
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                      decoration: InputDecoration(
-                        prefix: Icon(Icons.email, color: Colors.white),
-                        suffix: Icon(Icons.visibility_off, color: Colors.white),
-                        hintText: 'Email',
-                        labelText: 'Email',
-                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue.shade200),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.orange.shade200),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red.shade200),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onChanged: (value) {
-                        print(value);
-                      },
-                    ),
-                  ),
-                  SizedBox(height: 14),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.visiblePassword,
-                      cursorColor: Colors.deepOrange,
-                      enabled: true,
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                      decoration: InputDecoration(
-                        prefix: Icon(Icons.password, color: Colors.white),
-                        suffix: Icon(Icons.visibility_off, color: Colors.white),
-                        hintText: 'Password',
-                        labelText: 'Password',
-                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue.shade200),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.orange.shade200),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red.shade200),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onChanged: (value) {
-                        print(value);
+                  Expanded(
+                    flex: 3,
+                    child: ListView.builder(
+                      itemCount: 30,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          leading: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Colors.amber,
+                            backgroundImage: NetworkImage(
+                              'https://images.pexels.com/photos/17594395/pexels-photo-17594395.jpeg',
+                            ),
+                            // child: Icon(Icons.person),
+                          ),
+                          title: Text('Aba Salat'),
+                          subtitle: Text('Flutter cross Platform'),
+                          trailing: Text('11:37 AM'),
+                        );
                       },
                     ),
                   ),
@@ -210,6 +159,17 @@ class _MyappState extends State<Myapp> {
 //   }
 // }
 
+
+// Circular Avatar widget
+    // Padding(
+    //                 padding: EdgeInsets.only(top: 20),
+    //                 child: CircleAvatar(
+    //                   radius: 50,
+    //                   backgroundColor: Colors.amber,
+    //                   backgroundImage: AssetImage('assets/images/Me3.png'),
+    //                   // child: Icon(Icons.person),
+    //                 ),
+    //               ),
 
 // Container Widget
       // Center(
@@ -303,3 +263,72 @@ class _MyappState extends State<Myapp> {
     //                   ],
     //                 ),
     //               ),
+
+
+
+    // textFieldForm widget 
+
+    // Padding(
+    //                 padding: const EdgeInsets.all(8.0),
+    //                 child: TextFormField(
+    //                   keyboardType: TextInputType.emailAddress,
+    //                   cursorColor: Colors.deepOrange,
+    //                   enabled: true,
+    //                   style: TextStyle(fontSize: 18, color: Colors.white),
+    //                   decoration: InputDecoration(
+    //                     prefix: Icon(Icons.email, color: Colors.white),
+    //                     suffix: Icon(Icons.visibility_off, color: Colors.white),
+    //                     hintText: 'Email',
+    //                     labelText: 'Email',
+    //                     hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+    //                     enabledBorder: OutlineInputBorder(
+    //                       borderSide: BorderSide(color: Colors.blue.shade200),
+    //                       borderRadius: BorderRadius.circular(10),
+    //                     ),
+    //                     focusedBorder: OutlineInputBorder(
+    //                       borderSide: BorderSide(color: Colors.orange.shade200),
+    //                       borderRadius: BorderRadius.circular(10),
+    //                     ),
+    //                     errorBorder: OutlineInputBorder(
+    //                       borderSide: BorderSide(color: Colors.red.shade200),
+    //                       borderRadius: BorderRadius.circular(10),
+    //                     ),
+    //                   ),
+    //                   onChanged: (value) {
+    //                     print(value);
+    //                   },
+    //                 ),
+    //               ),
+
+    //  SizedBox(height: 14),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: TextFormField(
+                  //     keyboardType: TextInputType.visiblePassword,
+                  //     cursorColor: Colors.deepOrange,
+                  //     enabled: true,
+                  //     style: TextStyle(fontSize: 18, color: Colors.white),
+                  //     decoration: InputDecoration(
+                  //       prefix: Icon(Icons.password, color: Colors.white),
+                  //       suffix: Icon(Icons.visibility_off, color: Colors.white),
+                  //       hintText: 'Password',
+                  //       labelText: 'Password',
+                  //       hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+                  //       enabledBorder: OutlineInputBorder(
+                  //         borderSide: BorderSide(color: Colors.blue.shade200),
+                  //         borderRadius: BorderRadius.circular(10),
+                  //       ),
+                  //       focusedBorder: OutlineInputBorder(
+                  //         borderSide: BorderSide(color: Colors.orange.shade200),
+                  //         borderRadius: BorderRadius.circular(10),
+                  //       ),
+                  //       errorBorder: OutlineInputBorder(
+                  //         borderSide: BorderSide(color: Colors.red.shade200),
+                  //         borderRadius: BorderRadius.circular(10),
+                  //       ),
+                  //     ),
+                  //     onChanged: (value) {
+                  //       print(value);
+                  //     },
+                  //   ),
+                  // ),
