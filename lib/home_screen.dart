@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottery_app/screen_one.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String id = 'home_screen';
   const HomeScreen({super.key});
 
   @override
@@ -45,10 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Center(
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ScreenOne()),
-                  );
+                  Navigator.pushNamed(context, ScreenOne.id);
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => ScreenOne()),
+                  // );
                 },
                 child: Text('Go to next screen'),
               ),

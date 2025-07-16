@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottery_app/lottery_screen.dart';
 
 class ScreenOne extends StatefulWidget {
+  static const String id = 'screen_one';
   const ScreenOne({super.key});
 
   @override
@@ -18,10 +19,11 @@ class _ScreenOneState extends State<ScreenOne> {
           Center(child: Text("Screen one")),
           TextButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LotteryScreen()),
-              );
+              Navigator.pushNamed(context, LotteryScreen.id);
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => LotteryScreen()),
+              // );
             },
             child: Text('Move to the lottery screen'),
           ),

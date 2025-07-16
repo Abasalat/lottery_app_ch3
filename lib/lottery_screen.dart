@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:lottery_app/home_screen.dart';
+
 class LotteryScreen extends StatefulWidget {
+  static const String id = 'lottery_screen';
   const LotteryScreen({super.key});
 
   @override
@@ -70,7 +73,13 @@ class _LotteryScreenState extends State<LotteryScreen> {
             left: 0,
             child: TextButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  HomeScreen.id,
+                  (route) => false,
+                );
+                // Navigator.pushNamed(context, HomeScreen.id);
+                // Navigator.pop(context);
               },
               child: Text('Move back '),
             ),
