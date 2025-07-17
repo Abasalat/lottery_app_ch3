@@ -41,6 +41,7 @@ class _WhatappScreenState extends State<WhatappScreen> {
         ),
         body: TabBarView(
           children: [
+            // Chats
             ListView.builder(
               itemCount: 30,
               itemBuilder: (context, index) {
@@ -56,8 +57,89 @@ class _WhatappScreenState extends State<WhatappScreen> {
                 );
               },
             ),
-            Text('Status'),
-            Text('Calls'),
+
+            // Status
+            ListView.builder(
+              itemCount: 30,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("New Updated"),
+                        ListTile(
+                          leading: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.green, width: 3),
+                            ),
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                'https://images.pexels.com/photos/17594395/pexels-photo-17594395.jpeg',
+                              ),
+                            ),
+                          ),
+                          title: Text('Mehooo'),
+                          subtitle: Text("30m ago"),
+                        ),
+                        Divider(height: 3),
+                      ],
+                    ),
+                  );
+                } else {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          leading: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.green, width: 3),
+                            ),
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                'https://images.pexels.com/photos/17594395/pexels-photo-17594395.jpeg',
+                              ),
+                            ),
+                          ),
+                          title: Text('Mehooo'),
+                          subtitle: Text("30m ago"),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
+            ),
+
+            //Calls logs
+            ListView.builder(
+              itemCount: 30,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      'https://images.pexels.com/photos/17594395/pexels-photo-17594395.jpeg',
+                    ),
+                  ),
+                  title: Text('Mehooo'),
+                  subtitle: Text(
+                    index / 2 == 0
+                        ? 'you missed voice call'
+                        : 'you missed video call',
+                  ),
+                  trailing: Icon(
+                    index / 2 == 0 ? Icons.phone : Icons.video_call,
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
