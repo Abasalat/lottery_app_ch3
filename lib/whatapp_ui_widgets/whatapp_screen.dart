@@ -14,7 +14,7 @@ class _WhatappScreenState extends State<WhatappScreen> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Whatapp'),
+          title: Text('Whatapp', style: TextStyle(fontWeight: FontWeight.bold)),
           backgroundColor: Colors.teal,
           centerTitle: false,
           bottom: TabBar(
@@ -24,6 +24,20 @@ class _WhatappScreenState extends State<WhatappScreen> {
               Tab(child: Text('Calls')),
             ],
           ),
+          actions: [
+            Icon(Icons.search),
+            SizedBox(width: 8),
+            Icon(Icons.camera_alt),
+            SizedBox(width: 8),
+            PopupMenuButton(
+              icon: Icon(Icons.more_vert_outlined),
+              itemBuilder: (context) => [
+                PopupMenuItem(value: 1, child: Text('Groups')),
+                PopupMenuItem(value: 2, child: Text('Settings')),
+                PopupMenuItem(value: 3, child: Text('Logout')),
+              ],
+            ),
+          ],
         ),
         body: TabBarView(
           children: [
