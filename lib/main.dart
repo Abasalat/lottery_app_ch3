@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lottery_app/home_screen.dart';
-import 'package:lottery_app/lottery_screen.dart';
-import 'package:lottery_app/screen_one.dart';
+import 'package:lottery_app/whatapp_ui_widgets/whatapp_screen.dart';
+// import 'package:lottery_app/home_screen.dart';
+// import 'package:lottery_app/lottery_screen.dart';
+// import 'package:lottery_app/screen_one.dart';
 
 void main() {
   runApp(Myapp());
@@ -18,14 +19,17 @@ class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Navigation App',
-      initialRoute: HomeScreen.id,
-      routes: {
-        HomeScreen.id: (context) => HomeScreen(),
-        ScreenOne.id: (context) => ScreenOne(),
-        LotteryScreen.id: (context) => LotteryScreen(),
-      },
-      //home: HomeScreen()
+      title: 'Whatapp App',
+      theme: ThemeData(primaryColor: Colors.teal),
+
+      //Routing
+      // initialRoute: HomeScreen.id,
+      // routes: {
+      //   HomeScreen.id: (context) => HomeScreen(),
+      //   ScreenOne.id: (context) => ScreenOne(),
+      //   LotteryScreen.id: (context) => LotteryScreen(),
+      // },
+      home: WhatappScreen(),
     );
   }
 }
