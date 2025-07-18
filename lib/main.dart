@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottery_app/constructor_comp_const/component_constructor.dart';
-import 'package:lottery_app/constructor_comp_const/constor_screen.dart';
-import 'package:lottery_app/pubbb_dev_packages/pub_devv.dart';
+import 'package:lottery_app/screens/calculator_screen.dart';
+// import 'package:lottery_app/constructor_comp_const/constor_screen.dart';
+// import 'package:lottery_app/pubbb_dev_packages/pub_devv.dart';
 //import 'package:lottery_app/whatapp_ui_widgets/whatapp_screen.dart';
 // import 'package:lottery_app/home_screen.dart';
 // import 'package:lottery_app/lottery_screen.dart';
@@ -22,8 +23,12 @@ class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Whatapp App',
-      theme: ThemeData(primaryColor: Colors.teal),
+      theme: ThemeData(
+        primaryColor: Colors.teal,
+        scaffoldBackgroundColor: Colors.amberAccent.shade200,
+      ),
 
       //Routing
       // initialRoute: HomeScreen.id,
@@ -34,7 +39,8 @@ class _MyappState extends State<Myapp> {
       // },
       //home: WhatappScreen(),
       //home: PubDevv(),
-      home: ComponentConstructor(),
+      //home: ComponentConstructor(),
+      home: CalculatorScreen(),
     );
   }
 }
