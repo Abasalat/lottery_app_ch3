@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottery_app/constructor_comp_const/component_constructor.dart';
 import 'package:lottery_app/constructor_comp_const/constor_screen.dart';
 import 'package:lottery_app/pubbb_dev_packages/pub_devv.dart';
 //import 'package:lottery_app/whatapp_ui_widgets/whatapp_screen.dart';
@@ -33,7 +34,7 @@ class _MyappState extends State<Myapp> {
       // },
       //home: WhatappScreen(),
       //home: PubDevv(),
-      home: ConstorScreen(),
+      home: ComponentConstructor(),
     );
   }
 }
