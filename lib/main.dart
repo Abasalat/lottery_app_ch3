@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lottery_app/whatapp_ui_widgets/whatapp_screen.dart';
+import 'package:lottery_app/pubbb_dev_packages/pub_devv.dart';
+//import 'package:lottery_app/whatapp_ui_widgets/whatapp_screen.dart';
 // import 'package:lottery_app/home_screen.dart';
 // import 'package:lottery_app/lottery_screen.dart';
 // import 'package:lottery_app/screen_one.dart';
@@ -29,7 +30,8 @@ class _MyappState extends State<Myapp> {
       //   ScreenOne.id: (context) => ScreenOne(),
       //   LotteryScreen.id: (context) => LotteryScreen(),
       // },
-      home: WhatappScreen(),
+      //home: WhatappScreen(),
+      home: PubDevv(),
     );
   }
 }
